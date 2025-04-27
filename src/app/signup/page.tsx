@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import axios from "axios";
 import toast from "react-hot-toast";
 
@@ -70,7 +70,7 @@ export default function SigUpPage() {
                 onChange={(e)=> setUser({...user,password: e.target.value})}
                 placeholder="Password"
             ></input>
-            <button className="mt-4 border rounded-2xl p-2" onClick={onSignup}>{buttonDisabled? "Loading..." : "SignUp"}</button>
+            <button className="mt-4 border rounded-2xl p-2" onClick={onSignup}>{loading? "Loading..." : "SignUp"}</button>
             <p className="mt-2">Already registered ? <Link className="text-red-400" href='/login'>Login</Link> here .</p>
         </div>
     )
